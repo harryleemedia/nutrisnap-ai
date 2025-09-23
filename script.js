@@ -217,7 +217,7 @@ function handleFile(file) {
 
 // Upload Image to Webhook with enhanced debugging
 async function uploadImageToWebhook(file, retryCount = 0) {
-    const webhookUrl = 'https://harryleemedia.app.n8n.cloud/webhook-test/test';
+    const webhookUrl = 'https://harryleemedia.app.n8n.cloud/webhook/test';
     const maxRetries = 2;
     
     // Clear previous webhook state
