@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  nutrisnap-ai:
+    build: .
+    container_name: nutrisnap-ai
+    ports:
+      - "80:80"
+    restart: unless-stopped
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    environment:
+      - NGINX_HOST=localhost
+      - NGINX_PORT=80
+    networks:
+      - nutrisnap-network
+
+networks:
+  nutrisnap-network:
+    driver: bridge

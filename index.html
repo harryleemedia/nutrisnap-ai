@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>营养快拍AI - 即时营养分析</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Language Toggle -->
+        <div class="language-toggle">
+            <button class="lang-btn" id="langToggle">
+                <span class="lang-text">EN</span>
+                <span class="lang-icon">🌐</span>
+            </button>
+        </div>
+        
+        <!-- Header -->
+        <header class="header">
+            <h1 class="logo" data-zh="营养快拍AI" data-en="NutriSnap AI">营养快拍AI</h1>
+            <p class="tagline" data-zh="从您的美食照片中获得即时营养分析" data-en="Instant nutrition analysis from your meal photos">从您的美食照片中获得即时营养分析</p>
+        </header>
+
+        <!-- Main App Section -->
+        <main class="app-section">
+            <!-- Upload Card -->
+            <div class="upload-card">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon">📸</div>
+                    <h3 data-zh="上传或拍摄您的美食" data-en="Upload or Capture Your Meal">上传或拍摄您的美食</h3>
+                    <p data-zh="拖拽照片到此处或点击选择" data-en="Drag & drop a photo or click to select">拖拽照片到此处或点击选择</p>
+                    <input type="file" id="photoInput" accept="image/*" capture="environment">
+                </div>
+                <div class="preview-area" id="previewArea" style="display: none;">
+                    <img id="previewImage" alt="美食预览">
+                    <button class="remove-btn" id="removeBtn">×</button>
+                </div>
+            </div>
+
+            <!-- Analysis Button -->
+            <button class="analyze-btn" id="analyzeBtn" disabled>
+                <span class="btn-text" data-zh="分析营养成分" data-en="Analyze Nutrition">分析营养成分</span>
+                <span class="btn-loader" style="display: none;">⏳</span>
+            </button>
+
+            <!-- Results Panel -->
+            <div class="results-panel" id="resultsPanel" style="display: none;">
+                <h3 data-zh="营养成分分析" data-en="Nutrition Analysis">营养成分分析</h3>
+                <div class="nutrition-grid">
+                    <div class="nutrition-item">
+                        <span class="nutrition-label" data-zh="卡路里" data-en="Calories">卡路里</span>
+                        <span class="nutrition-value" id="calories">0</span>
+                    </div>
+                    <div class="nutrition-item">
+                        <span class="nutrition-label" data-zh="蛋白质" data-en="Protein">蛋白质</span>
+                        <span class="nutrition-value" id="protein">0克</span>
+                    </div>
+                    <div class="nutrition-item">
+                        <span class="nutrition-label" data-zh="碳水化合物" data-en="Carbs">碳水化合物</span>
+                        <span class="nutrition-value" id="carbs">0克</span>
+                    </div>
+                    <div class="nutrition-item">
+                        <span class="nutrition-label" data-zh="脂肪" data-en="Fat">脂肪</span>
+                        <span class="nutrition-value" id="fat">0克</span>
+                    </div>
+                </div>
+                
+                <!-- Meal Quality Section -->
+                <div class="meal-info-section" id="mealInfoSection" style="display: none;">
+                    <div class="meal-quality">
+                        <h4 data-zh="餐食品质" data-en="Meal Quality">餐食品质</h4>
+                        <p class="quality-text" id="qualityText">-</p>
+                    </div>
+                    
+                    <div class="meal-suggestion">
+                        <h4 data-zh="营养建议" data-en="Nutrition Suggestion">营养建议</h4>
+                        <p class="suggestion-text" id="suggestionText">-</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Features Section -->
+        <section class="features-section">
+            <h2 data-zh="为什么选择营养快拍AI？" data-en="Why Choose NutriSnap AI?">为什么选择营养快拍AI？</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3 data-zh="即时分析" data-en="Instant Analysis">即时分析</h3>
+                    <p data-zh="利用先进的AI技术，几秒钟内获得营养成分数据" data-en="Get nutrition facts in seconds with our advanced AI technology">利用先进的AI技术，几秒钟内获得营养成分数据</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3 data-zh="精准结果" data-en="Accurate Results">精准结果</h3>
+                    <p data-zh="机器学习驱动的精确卡路里和营养成分计算" data-en="Precise calorie and macro counting powered by machine learning">机器学习驱动的精确卡路里和营养成分计算</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3 data-zh="简单易用" data-en="Easy to Use">简单易用</h3>
+                    <p data-zh="只需拍张照片，让我们的AI为您完成其余工作" data-en="Simply snap a photo and let our AI do the rest">只需拍张照片，让我们的AI为您完成其余工作</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
