@@ -242,8 +242,8 @@ async function uploadImageToWebhook(file, retryCount = 0) {
         
         console.log('FormData created successfully');
         
-        // Set up timeout
-        const timeout = 20000; // 20 seconds
+        // Set up timeout - increased for AI processing
+        const timeout = 60000; // 60 seconds for AI analysis
         const controller = new AbortController();
         const timeoutId = setTimeout(() => {
             console.log('Request timeout triggered');
@@ -346,7 +346,7 @@ async function uploadImageToWebhook(file, retryCount = 0) {
                 await new Promise(resolve => setTimeout(resolve, 1000));
                 return await uploadImageToWebhook(file, retryCount + 1);
             }
-            window.webhookError = '请求超时';
+            window.webhookError = 'AI分析超时，请稍后再试或检查网络连接';
         } else if (error.name === 'TypeError' && (error.message.includes('fetch') || error.message.includes('Failed to fetch'))) {
             console.error('Network/CORS error detected');
             if (retryCount < maxRetries) {
